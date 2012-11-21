@@ -1,0 +1,56 @@
+@width: 300px;
+
+#user-details-popup {
+    @bgcolor: #fff;
+    @bgcolor-dark: darken(@bgcolor, 10%);
+    @border-color: #444;
+
+    #arrow > .bottom-border(10px, @bgcolor-dark, 2px, @border-color);
+    #gradient > .vertical-three-colors(@bgcolor, @bgcolor, 75%, @bgcolor-dark);
+    .box-shadow(0 0 8px fade(#000, 50%));
+    .border-radius(2px);
+    .clearfix();
+
+    border: 1px solid @border-color;
+    font-size: 0.9em;
+    max-width: @width;
+    padding: 0.5em;
+    position: absolute;
+    z-index: 100;
+}
+
+#user-details {
+    max-width: @width;
+    min-width: @width;
+    width: @width;
+    img[class*="avatar"] {
+        float: left;
+        padding-right: 0.5em;
+    }
+
+    h1, h2 {
+        margin: 0;
+        padding: 0;
+    }
+    h1 { font-size: 1em; }
+    h2 {
+        &:before { content: "„ "; }
+        &:after { content: " ”"; }
+        font-size: 0.95em;
+    }
+    ul {
+        clear: left;
+        margin: 3px 0 0 0;
+        padding: 3px 0 0 0;
+        text-align: center;
+    }
+    li {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0 0.5em;
+    }
+    li, span {
+        vertical-align: top;
+    }
+}

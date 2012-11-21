@@ -1,0 +1,7 @@
+pluginname=Userdetails Popup
+pluginclassname=UserdetailsPopupPlugin
+origin=UOL
+version=0.9
+description=Das Plugin stellt via JavaScript ein Popup mit Nutzerdetails wie auf der Profilseite zur Verfügung, wenn die Maus über einen Profillink bewegt wird.
+homepage=https://github.com/tleilax/studip-userdetails-popup
+studipMinVersion=2.2
