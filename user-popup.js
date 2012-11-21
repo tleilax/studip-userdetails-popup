@@ -33,7 +33,7 @@
 
 (function ($, STUDIP) {
 
-    var SELECTOR = '#layout_page a[href*="about.php?"]',
+    var SELECTOR = '#layout_page a[href*="about.php?"], .index_container a[href*="about.php?"]',
         DELAY = 200,
         FOLD = 8,
         userDetailsCache = {},
