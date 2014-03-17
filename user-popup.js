@@ -67,15 +67,15 @@
         if (userDetailsCache[username]) {
             callback(userDetailsCache[username]);
         } else {
-            var userdetails_uri = $('meta[name="user-details"]').attr('content');
-            $.get(userdetails_uri + '/' + username, function (response) {
+            var uri = STUDIP.URLHelper.getURL('plugins.php/userdetailspopupplugin/details/' + username);
+            $.get(uri, function (response) {
                 userDetailsCache[username] = response;
                 callback(response);
             });
         }
     }
 
-    $(SELECTOR).live('mouseenter', function (event) {
+    $(document).on('mouseenter', SELECTOR, function (event) {
         window.clearTimeout(timeout);
 
         var href = $(this).attr('href'),
@@ -117,11 +117,11 @@
         });
     });
 
-    $(SELECTOR + ', #user-details').live('mouseleave', function () {
+    $(document).on('mouseleave', SELECTOR + ', #user-details', function () {
         timeout = window.setTimeout(function() { userDetails.hide('fade', 'fast'); }, DELAY);
     });
 
-    $('#user-details').live('mouseenter', function () {
+    $(document).on('mouseenter', '#user-details', function () {
         window.clearTimeout(timeout);
     });
 

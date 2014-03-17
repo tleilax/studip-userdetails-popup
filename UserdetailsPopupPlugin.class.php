@@ -12,7 +12,7 @@
  * the License, or (at your option) any later version.
  *
  * @author  Jan-Hendrik Willms <tleilax+studip@gmail.com>
- * @license     http://www.gnu.org/licenses/gpl-2.0.html GPL version 2
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GPL version 2
  * @version 1.0
  */
 
@@ -22,17 +22,8 @@ class UserdetailsPopupPlugin extends StudIPPlugin implements SystemPlugin
     {
         parent::__construct();
 
-        PageLayout::addHeadElement('meta', array(
-            'name'    => 'user-details',
-            'content' => PluginEngine::getLink('userdetailspopupplugin/details', array('cid' => null)),
-        ));
-
-        if (method_exists($this, 'addStylesheet')) {
-            $this->addStylesheet('user-popup.less');
-        } else {
-            PageLayout::addStylesheet($this->getPluginURL().'/user-popup.css');
-        }
-        PageLayout::addScript($this->getPluginURL().'/user-popup.js');
+        $this->addStylesheet('user-popup.less');
+        PageLayout::addScript($this->getPluginURL() . '/user-popup.js');
     }
 
     public function details_action($username)
